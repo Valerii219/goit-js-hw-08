@@ -19,6 +19,7 @@ function onForm(ev) {
 const onFormInput = (ev) => {
     localStorage.setItem(KEY_FORM, JSON.stringify(formData))
     formData[ev.target.name] = ev.target.value;
+    console.log(formData);
     }
 
     refs.form.addEventListener('input', throttle(onFormInput, 500));
@@ -28,7 +29,7 @@ const saveMsg = JSON.parse(localStorage.getItem(KEY_FORM));
         refs.input.value = saveMsg.email;}
         if (saveMsg.email)
         {refs.textarea.value = saveMsg.message;}
-        return;
+        
     
     
 
