@@ -6,8 +6,10 @@ const refs = {
   textarea: document.querySelector('.feedback-form textarea')
 };
 
-refs.form.addEventListener('submit', onForm);
 
+
+
+refs.form.addEventListener('submit', onForm);
 const formData = {};
 const KEY_FORM = 'feedback-form-state';
 function onForm(ev) {
@@ -17,19 +19,17 @@ function onForm(ev) {
 }
 
 const onFormInput = (ev) => {
-    localStorage.setItem(KEY_FORM, JSON.stringify(formData))
-    formData[ev.target.name] = ev.target.value;
+  formData[ev.target.name] = ev.target.value;
+   const stringifyKey = localStorage.setItem(KEY_FORM, JSON.stringify(formData))
+   
     console.log(formData);
     }
 
+    
     refs.form.addEventListener('input', throttle(onFormInput, 500));
+let saveMsg = JSON.parse(localStorage.getItem(KEY_FORM)) || "";
 
-const saveMsg = JSON.parse(localStorage.getItem(KEY_FORM));
-    if (saveMsg.email) {
-        refs.input.value = saveMsg.email;}
-        if (saveMsg.email)
-        {refs.textarea.value = saveMsg.message;}
-        
+   
     
     
 
