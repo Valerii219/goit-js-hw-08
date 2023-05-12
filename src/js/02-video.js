@@ -11,8 +11,13 @@ const onPlay = function(data) {
 };
 player.on('timeupdate', throttle(onPlay, 1000))
 
+const getLocalKey = localStorage.getItem(LOCAL_KEY);
+if (getLocalKey){
+    console.log(getLocalKey);
+}
+    
 const GET_LOCAL_KEY = localStorage.getItem(LOCAL_KEY);
-    player.setCurrentTime(GET_LOCAL_KEY).then(function(seconds) {
+    player.setCurrentTime(getLocalKey).then(function(seconds) {
     
     }).catch(function(error) {
         switch (error.name) {
