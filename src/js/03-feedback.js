@@ -38,7 +38,7 @@ function onForm(ev) {
   }
 }
 function onFormInput(ev) {
-  const formData = { email: email.value, message: message.value };
+  const formData = { email: refs.input.value, message: refs.textarea.value };
   localStorage.setItem(KEY_FORM, JSON.stringify(formData));
   
 }
