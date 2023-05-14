@@ -13,7 +13,7 @@ const KEY_FORM = 'feedback-form-state';
 const {email, message} = refs.form.elements;
 
 saveEl();
-const formData = {};
+
 function onForm(ev) {
   
   const mailEl = email.value;
@@ -29,8 +29,8 @@ function onForm(ev) {
  }
  console.log(formData);
 function onFormInput(ev) {
- let formData2 = { email: email.value, message: message.value };
-  const stringifyKey = localStorage.setItem(KEY_FORM, JSON.stringify(formData2));
+  formData = { email: email.value, message: message.value };
+  const stringifyKey = localStorage.setItem(KEY_FORM, JSON.stringify(formData));
   
 }
 function saveEl(){
