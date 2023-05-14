@@ -14,16 +14,17 @@ const {email, message} = refs.form.elements;
 
 saveEl();
 function onForm(ev) {
-  ev.preventDefault();
-  ev.currentTarget.reset();
-  localStorage.removeItem(KEY_FORM);
-  const formEl = ev.currentTarget.elements;
-  const mailEl = formEl.email.value;
-  const messageEl = formEl.message.value;
+  const mailEl = email.value;
+  const messageEl = message.value;
   const formDataSubmit = 
   {mailEl, 
     messageEl }
   console.log(formDataSubmit);
+  ev.preventDefault();
+  ev.currentTarget.reset();
+  localStorage.removeItem(KEY_FORM);
+
+ 
  }
  
 function onFormInput(ev) {
