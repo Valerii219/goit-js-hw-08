@@ -29,7 +29,7 @@ function onForm(ev) {
  }
  console.log(formData);
 function onFormInput(ev) {
-  formData = { email: email.value, message: message.value };
+ let formData = { email: email.value, message: message.value };
   const stringifyKey = localStorage.setItem(KEY_FORM, JSON.stringify(formData));
   
 }
