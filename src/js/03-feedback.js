@@ -27,10 +27,10 @@ function onForm(ev) {
   localStorage.removeItem(KEY_FORM);
   
  }
- console.log(formData);
+ 
 function onFormInput(ev) {
   formData = { email: email.value, message: message.value };
-  const stringifyKey = localStorage.setItem(KEY_FORM, JSON.stringify(formData));
+  localStorage.setItem(KEY_FORM, JSON.stringify(formData));
   
 }
 function saveEl(){
