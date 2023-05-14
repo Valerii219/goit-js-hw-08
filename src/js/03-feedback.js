@@ -11,7 +11,7 @@ refs.form.addEventListener('input', throttle(onFormInput, 500));
 const KEY_FORM = 'feedback-form-state';
 
 const {email, message} = refs.form.elements;
-
+formData = {};
 saveEl();
 function onForm(ev) {
   
@@ -24,12 +24,13 @@ function onForm(ev) {
   ev.preventDefault();
   ev.currentTarget.reset();
   localStorage.removeItem(KEY_FORM);
-  formData = {};
+  
  }
-
+ console.log(formData);
 function onFormInput(ev) {
-  formData2 = { email: email.value, message: message.value };
-  const stringifyKey = localStorage.setItem(KEY_FORM, JSON.stringify(formData2));
+  formData = { email: email.value, message: message.value };
+  const stringifyKey = localStorage.setItem(KEY_FORM, JSON.stringify(formData));
+  
 }
 function saveEl(){
   let saveMsg = JSON.parse(localStorage.getItem(KEY_FORM)) || '';
