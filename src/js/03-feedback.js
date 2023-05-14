@@ -22,9 +22,12 @@ function onForm(ev) {
   {mailEl, 
     messageEl }
   console.log(formDataSubmit);
-  
+  if (mailEl === '' || messageEl === '') {
+    return alert ('Please fill in all fields')}
   ev.currentTarget.reset();
   localStorage.removeItem(KEY_FORM);
+  
+    
   
  }
  function saveEl(){

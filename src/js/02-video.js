@@ -10,22 +10,8 @@ const onPlay = function(data) {
     localStorage.setItem(LOCAL_KEY, seconds);
 };
 player.on('timeupdate', throttle(onPlay, 1000))
-const getLocalKey = localStorage.getItem(LOCAL_KEY);
-if (getLocalKey === 0){
-    player.setCurrentTime(0);
-    return;
-}
-console.log(getLocalKey);
-player.setCurrentTime(getLocalKey).then(function(seconds) {
-    
-    }).catch(function(error) {
-        switch (error.name) {
-            case 'RangeError':
-                // the time was less than 0 or greater than the video’s duration
-                break;
-            default:
-                // some other error occurred
-                break;
-        }
-    });
+const getLocalKey = localStorage.getItem(LOCAL_KEY) || 0;
+    player.setCurrentTime(getLocalKey);
+
+
     
