@@ -11,7 +11,7 @@ refs.form.addEventListener('input', throttle(onFormInput, 500));
 const KEY_FORM = 'feedback-form-state';
 
 const {email, message} = refs.form.elements;
-formData = {};
+
 saveEl();
 function onForm(ev) {
   
@@ -24,7 +24,7 @@ function onForm(ev) {
   ev.preventDefault();
   ev.currentTarget.reset();
   localStorage.removeItem(KEY_FORM);
-  
+  formData = {};
  }
 
 function onFormInput(ev) {
