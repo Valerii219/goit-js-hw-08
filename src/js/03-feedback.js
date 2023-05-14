@@ -27,13 +27,7 @@ function onForm(ev) {
   localStorage.removeItem(KEY_FORM);
   
  }
- 
-function onFormInput(ev) {
-  formData = { email: email.value, message: message.value };
-  localStorage.setItem(KEY_FORM, JSON.stringify(formData));
-  
-}
-function saveEl(){
+ function saveEl(){
   let saveMsg = JSON.parse(localStorage.getItem(KEY_FORM)) || '';
 
   if(saveMsg){
@@ -43,5 +37,11 @@ function saveEl(){
   
   }
 }
+function onFormInput(ev) {
+  formData = { email: email.value, message: message.value };
+  localStorage.setItem(KEY_FORM, JSON.stringify(formData));
+  
+}
+
 
 
