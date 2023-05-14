@@ -15,14 +15,14 @@ const {email, message} = refs.form.elements;
 saveEl();
 
 function onForm(ev) {
-  
-  const mailEl = email.value;
-  const messageEl = message.value;
+  ev.preventDefault();
+  const mailEl = refs.input.value;
+  const messageEl = refs.textarea.value;
   const formDataSubmit = 
   {mailEl, 
     messageEl }
   console.log(formDataSubmit);
-  ev.preventDefault();
+  
   ev.currentTarget.reset();
   localStorage.removeItem(KEY_FORM);
   
@@ -31,14 +31,14 @@ function onForm(ev) {
   let saveMsg = JSON.parse(localStorage.getItem(KEY_FORM)) || '';
 
   if(saveMsg){
-    email.value = saveMsg.email || '';
-    message.value = saveMsg.message || '';
+    refs.input.value = saveMsg.email || '';
+    refs.textarea.value = saveMsg.message || '';
     return ;
   
   }
 }
 function onFormInput(ev) {
-  formData = { email: email.value, message: message.value };
+  const formData = { email: email.value, message: message.value };
   localStorage.setItem(KEY_FORM, JSON.stringify(formData));
   
 }
