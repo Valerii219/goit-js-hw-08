@@ -11,8 +11,9 @@ refs.form.addEventListener('input', throttle(onFormInput, 500));
 const KEY_FORM = 'feedback-form-state';
 
 const {email, message} = refs.form.elements;
-formData = {};
+
 saveEl();
+formData = {};
 function onForm(ev) {
   
   const mailEl = email.value;
