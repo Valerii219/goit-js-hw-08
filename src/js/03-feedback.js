@@ -29,8 +29,8 @@ function onForm(ev) {
  }
  console.log(formData);
 function onFormInput(ev) {
- let formData = { email: email.value, message: message.value };
-  const stringifyKey = localStorage.setItem(KEY_FORM, JSON.stringify(formData));
+ let formData2 = { email: email.value, message: message.value };
+  const stringifyKey = localStorage.setItem(KEY_FORM, JSON.stringify(formData2));
   
 }
 function saveEl(){
