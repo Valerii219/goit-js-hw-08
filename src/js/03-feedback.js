@@ -28,8 +28,8 @@ function onForm(ev) {
  }
 
 function onFormInput(ev) {
-  formData = { email: email.value, message: message.value };
-  const stringifyKey = localStorage.setItem(KEY_FORM, JSON.stringify(formData));
+  formData2 = { email: email.value, message: message.value };
+  const stringifyKey = localStorage.setItem(KEY_FORM, JSON.stringify(formData2));
 }
 function saveEl(){
   let saveMsg = JSON.parse(localStorage.getItem(KEY_FORM)) || '';
